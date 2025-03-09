@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import numpy as np
-from tensorflow.keras.models import load_model
 
 # Initialize the Flask application
 app = Flask(__name__)
+CORS(app) # enable cors for all routes 
 
 # Load the Pre-trained Models
 fuel_model = load_model('models/fuel_consumption_model.h5')
